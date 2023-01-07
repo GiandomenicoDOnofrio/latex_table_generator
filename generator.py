@@ -3,7 +3,6 @@ res = "\\documentclass{{article}} \n\\usepackage{{array}} \n\\usepackage[table]{
 
 
 column_width = "2"
-no_char = " "
 big_title = "Morphological arrhythmias systems"
 headers = ["Author", "Performance", "Database", "Classes", "Model"]
 data = [
@@ -23,7 +22,7 @@ res += f'{" & ".join(headers)} \\\\ \n'
 res += f'\hline \n'
 
 for i, row in enumerate(data):
-    v = [f'\parbox[t]{{{column_width}cm}}' + '{ ' + item.replace("\n", "\\\\") + f' \\\\ {no_char}' + ' }' for item in row]
+    v = [f'\parbox[t]{{{column_width}cm}}' + '{ ' + item.replace("\n", "\\\\") + f' \\\\ ' + ' }' for item in row]
     res+= f'{" & ".join(v)}'
     res+= f' \\\\ \hline \n'
 
